@@ -1,0 +1,1076 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToolBox Pro - Professional Online Tools & Converters</title>
+    <meta name="description" content="Professional online tools and converters for PDF, Image, Audio, Text processing and productivity. Fast, secure, and free to use.">
+    <meta name="keywords" content="online tools, converters, PDF tools, image tools, audio tools, text tools, productivity tools">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#667EEA',
+                        secondary: '#764BA2',
+                        accent: '#F093FB',
+                        dark: '#0F0F23',
+                        cardDark: '#1A1A2E',
+                        success: '#4ECDC4'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                        'fade-in': 'fadeIn 0.3s ease-out'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes glow {
+            from { box-shadow: 0 0 5px #667EEA, 0 0 10px #667EEA, 0 0 15px #667EEA; }
+            to { box-shadow: 0 0 10px #667EEA, 0 0 20px #667EEA, 0 0 30px #667EEA; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #667EEA 0%, #F093FB 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .ad-slot {
+            background: linear-gradient(45deg, rgba(102, 126, 234, 0.1) 0%, rgba(240, 147, 251, 0.1) 100%);
+            border: 2px dashed rgba(102, 126, 234, 0.3);
+            min-height: 120px;
+        }
+    </style>
+</head>
+<body class="bg-dark text-white font-inter overflow-x-hidden">
+    
+    <!-- Navigation Header -->
+    <nav class="fixed top-0 w-full z-50 glassmorphism border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="gradient-text font-poppins font-bold text-xl">
+                        <i class="fas fa-tools mr-2"></i>ToolBox Pro
+                    </div>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="flex items-center space-x-6">
+                        <button class="nav-item text-white/80 hover:text-white transition-all duration-300" onclick="showView('home')">Home</button>
+                        <button class="nav-item text-white/80 hover:text-white transition-all duration-300" onclick="showView('pdf-tools')">PDF Tools</button>
+                        <button class="nav-item text-white/80 hover:text-white transition-all duration-300" onclick="showView('image-tools')">Image Tools</button>
+                        <button class="nav-item text-white/80 hover:text-white transition-all duration-300" onclick="showView('audio-tools')">Audio Tools</button>
+                        <button class="nav-item text-white/80 hover:text-white transition-all duration-300" onclick="showView('text-tools')">Text Tools</button>
+                        <button class="nav-item text-white/80 hover:text-white transition-all duration-300" onclick="showView('productivity-tools')">Productivity</button>
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <button onclick="showView('admin')" class="hidden admin-toggle bg-gradient-to-r from-primary to-accent px-4 py-2 rounded-lg text-white font-medium hover:shadow-lg transition-all duration-300">
+                        <i class="fas fa-cog mr-2"></i>Admin
+                    </button>
+                    <button class="md:hidden text-white" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glassmorphism border-t border-white/10">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <button class="block px-3 py-2 text-white/80 hover:text-white transition-all duration-300 w-full text-left" onclick="showView('home')">Home</button>
+                <button class="block px-3 py-2 text-white/80 hover:text-white transition-all duration-300 w-full text-left" onclick="showView('pdf-tools')">PDF Tools</button>
+                <button class="block px-3 py-2 text-white/80 hover:text-white transition-all duration-300 w-full text-left" onclick="showView('image-tools')">Image Tools</button>
+                <button class="block px-3 py-2 text-white/80 hover:text-white transition-all duration-300 w-full text-left" onclick="showView('audio-tools')">Audio Tools</button>
+                <button class="block px-3 py-2 text-white/80 hover:text-white transition-all duration-300 w-full text-left" onclick="showView('text-tools')">Text Tools</button>
+                <button class="block px-3 py-2 text-white/80 hover:text-white transition-all duration-300 w-full text-left" onclick="showView('productivity-tools')">Productivity</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <main class="pt-16">
+        
+        <!-- Home View -->
+        <div id="home-view" class="view-content">
+            <!-- Hero Section -->
+            <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+                <!-- Background with animated particles effect -->
+                <div class="absolute inset-0 bg-gradient-to-br from-dark via-secondary/20 to-primary/20"></div>
+                
+                <div class="relative z-10 max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+                    <h1 class="text-5xl md:text-7xl font-poppins font-bold mb-6 animate-slide-up">
+                        <span class="gradient-text">Professional</span>
+                        <br>Online Tools
+                    </h1>
+                    <p class="text-xl md:text-2xl text-white/80 mb-8 animate-slide-up" style="animation-delay: 0.2s">
+                        Convert, process, and optimize your files with our comprehensive suite of online tools
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up" style="animation-delay: 0.4s">
+                        <button onclick="showView('pdf-tools')" class="gradient-bg px-8 py-4 rounded-xl text-white font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+                            <i class="fas fa-file-pdf mr-2"></i>Get Started
+                        </button>
+                        <button class="glassmorphism px-8 py-4 rounded-xl text-white font-semibold hover:scale-105 transition-all duration-300 border border-white/20">
+                            <i class="fas fa-play mr-2"></i>Watch Demo
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Floating Elements -->
+                <div class="absolute top-1/4 left-1/4 w-16 h-16 bg-primary/20 rounded-full animate-float"></div>
+                <div class="absolute top-3/4 right-1/4 w-12 h-12 bg-accent/20 rounded-full animate-float" style="animation-delay: 2s"></div>
+                <div class="absolute bottom-1/4 left-1/3 w-20 h-20 bg-success/20 rounded-full animate-float" style="animation-delay: 4s"></div>
+            </section>
+
+            <!-- Ad Slot 1 -->
+            <div class="ad-slot rounded-xl mx-4 mb-8 flex items-center justify-center">
+                <div class="text-center text-white/60">
+                    <i class="fas fa-ad text-2xl mb-2"></i>
+                    <p class="text-sm">Advertisement Slot 1</p>
+                    <p class="text-xs">728x90 Leaderboard</p>
+                </div>
+            </div>
+
+            <!-- Features Section -->
+            <section class="py-20 px-4 sm:px-6 lg:px-8">
+                <div class="max-w-7xl mx-auto">
+                    <h2 class="text-4xl font-poppins font-bold text-center mb-16 gradient-text">Our Tool Categories</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- PDF Tools Card -->
+                        <div class="group glassmorphism rounded-2xl p-6 hover:scale-105 transition-all duration-300 cursor-pointer" onclick="showView('pdf-tools')">
+                            <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mb-4 group-hover:animate-glow">
+                                <i class="fas fa-file-pdf text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">PDF Tools & Converters</h3>
+                            <p class="text-white/70 mb-4">Convert, merge, split, and compress PDF files with professional-grade tools</p>
+                            <div class="flex items-center text-primary group-hover:text-accent transition-colors duration-300">
+                                <span>Explore Tools</span>
+                                <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+                            </div>
+                        </div>
+
+                        <!-- Image Tools Card -->
+                        <div class="group glassmorphism rounded-2xl p-6 hover:scale-105 transition-all duration-300 cursor-pointer" onclick="showView('image-tools')">
+                            <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mb-4 group-hover:animate-glow">
+                                <i class="fas fa-image text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">Image Tools & Converters</h3>
+                            <p class="text-white/70 mb-4">Resize, compress, convert and edit images in multiple formats</p>
+                            <div class="flex items-center text-primary group-hover:text-accent transition-colors duration-300">
+                                <span>Explore Tools</span>
+                                <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+                            </div>
+                        </div>
+
+                        <!-- Audio Tools Card -->
+                        <div class="group glassmorphism rounded-2xl p-6 hover:scale-105 transition-all duration-300 cursor-pointer" onclick="showView('audio-tools')">
+                            <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mb-4 group-hover:animate-glow">
+                                <i class="fas fa-music text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">Audio Tools & Converters</h3>
+                            <p class="text-white/70 mb-4">Convert audio formats, trim clips, and enhance audio quality</p>
+                            <div class="flex items-center text-primary group-hover:text-accent transition-colors duration-300">
+                                <span>Explore Tools</span>
+                                <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+                            </div>
+                        </div>
+
+                        <!-- Text Tools Card -->
+                        <div class="group glassmorphism rounded-2xl p-6 hover:scale-105 transition-all duration-300 cursor-pointer" onclick="showView('text-tools')">
+                            <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mb-4 group-hover:animate-glow">
+                                <i class="fas fa-font text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">Text Tools & Converters</h3>
+                            <p class="text-white/70 mb-4">Format text, convert cases, count words, and generate content</p>
+                            <div class="flex items-center text-primary group-hover:text-accent transition-colors duration-300">
+                                <span>Explore Tools</span>
+                                <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+                            </div>
+                        </div>
+
+                        <!-- Productivity Tools Card -->
+                        <div class="group glassmorphism rounded-2xl p-6 hover:scale-105 transition-all duration-300 cursor-pointer" onclick="showView('productivity-tools')">
+                            <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mb-4 group-hover:animate-glow">
+                                <i class="fas fa-chart-line text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">Productivity & Financial</h3>
+                            <p class="text-white/70 mb-4">Calculators, generators, and tools to boost your productivity</p>
+                            <div class="flex items-center text-primary group-hover:text-accent transition-colors duration-300">
+                                <span>Explore Tools</span>
+                                <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+                            </div>
+                        </div>
+
+                        <!-- All Tools Card -->
+                        <div class="group glassmorphism rounded-2xl p-6 hover:scale-105 transition-all duration-300 cursor-pointer border-2 border-primary/30">
+                            <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mb-4 group-hover:animate-glow">
+                                <i class="fas fa-tools text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">All Tools</h3>
+                            <p class="text-white/70 mb-4">Browse our complete collection of professional online tools</p>
+                            <div class="flex items-center text-primary group-hover:text-accent transition-colors duration-300">
+                                <span>View All</span>
+                                <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Ad Slots for remaining positions -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 px-4 mb-8">
+                <div class="ad-slot rounded-xl flex items-center justify-center">
+                    <div class="text-center text-white/60">
+                        <i class="fas fa-ad text-2xl mb-2"></i>
+                        <p class="text-sm">Advertisement Slot 2</p>
+                        <p class="text-xs">300x250 Medium Rectangle</p>
+                    </div>
+                </div>
+                <div class="ad-slot rounded-xl flex items-center justify-center">
+                    <div class="text-center text-white/60">
+                        <i class="fas fa-ad text-2xl mb-2"></i>
+                        <p class="text-sm">Advertisement Slot 3</p>
+                        <p class="text-xs">300x250 Medium Rectangle</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Section -->
+            <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-secondary/10 to-primary/10">
+                <div class="max-w-4xl mx-auto text-center">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                        <div class="animate-slide-up">
+                            <div class="text-3xl md:text-4xl font-bold gradient-text mb-2">50+</div>
+                            <div class="text-white/70">Professional Tools</div>
+                        </div>
+                        <div class="animate-slide-up" style="animation-delay: 0.1s">
+                            <div class="text-3xl md:text-4xl font-bold gradient-text mb-2">1M+</div>
+                            <div class="text-white/70">Files Processed</div>
+                        </div>
+                        <div class="animate-slide-up" style="animation-delay: 0.2s">
+                            <div class="text-3xl md:text-4xl font-bold gradient-text mb-2">99.9%</div>
+                            <div class="text-white/70">Uptime</div>
+                        </div>
+                        <div class="animate-slide-up" style="animation-delay: 0.3s">
+                            <div class="text-3xl md:text-4xl font-bold gradient-text mb-2">24/7</div>
+                            <div class="text-white/70">Support</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- More Ad Slots -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 px-4 my-8">
+                <div class="ad-slot rounded-xl flex items-center justify-center">
+                    <div class="text-center text-white/60">
+                        <i class="fas fa-ad text-2xl mb-2"></i>
+                        <p class="text-sm">Advertisement Slot 4</p>
+                        <p class="text-xs">300x250 Medium Rectangle</p>
+                    </div>
+                </div>
+                <div class="ad-slot rounded-xl flex items-center justify-center">
+                    <div class="text-center text-white/60">
+                        <i class="fas fa-ad text-2xl mb-2"></i>
+                        <p class="text-sm">Advertisement Slot 5</p>
+                        <p class="text-xs">300x250 Medium Rectangle</p>
+                    </div>
+                </div>
+                <div class="ad-slot rounded-xl flex items-center justify-center">
+                    <div class="text-center text-white/60">
+                        <i class="fas fa-ad text-2xl mb-2"></i>
+                        <p class="text-sm">Advertisement Slot 6</p>
+                        <p class="text-xs">300x250 Medium Rectangle</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PDF Tools View -->
+        <div id="pdf-tools-view" class="view-content hidden">
+            <section class="py-12 px-4 sm:px-6 lg:px-8">
+                <div class="max-w-7xl mx-auto">
+                    <!-- Header -->
+                    <div class="text-center mb-12">
+                        <h1 class="text-4xl md:text-5xl font-poppins font-bold mb-4 gradient-text">PDF Tools & Converters</h1>
+                        <p class="text-xl text-white/80 max-w-3xl mx-auto">Professional PDF processing tools for all your document needs</p>
+                    </div>
+
+                    <!-- Ad Slot -->
+                    <div class="ad-slot rounded-xl mx-4 mb-8 flex items-center justify-center">
+                        <div class="text-center text-white/60">
+                            <i class="fas fa-ad text-2xl mb-2"></i>
+                            <p class="text-sm">Advertisement Slot 1</p>
+                            <p class="text-xs">728x90 Leaderboard</p>
+                        </div>
+                    </div>
+
+                    <!-- PDF Tools Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                        <!-- PDF to Word -->
+                        <div class="group glassmorphism rounded-xl p-6 hover:scale-105 transition-all duration-300 cursor-pointer" onclick="openTool('PDF to Word', 'pdf-to-word')">
+                            <div class="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-red-500/30 transition-all duration-300">
+                                <i class="fas fa-file-word text-red-400 text-xl"></i>
+                            </div>
+                            <h3 class="font-semibold text-lg mb-2">PDF to Word</h3>
+                            <p class="text-white/60 text-sm">Convert PDF documents to editable Word files</p>
+                        </div>
+
+                        <!-- Word to PDF -->
+                        <div class="group glassmorphism rounded-xl p-6 hover:scale-105 transition-all duration-300 cursor-pointer" onclick="openTool('Word to PDF', 'word-to-pdf')">
+                            <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-500/30 transition-all duration-300">
+                                <i class="fas fa-file-pdf text-blue-400 text-xl"></i>
+                            </div>
+                            <h3 class="font-semibold text-lg mb-2">Word to PDF</h3>
+                            <p class="text-white/60 text-sm">Convert Word documents to PDF format</p>
+                        </div>
+
+                        <!-- Merge PDF -->
+                        <div class="group glassmorphism rounded-xl p-6 hover:scale-105 transition-all duration-300 cursor-pointer" onclick="openTool('Merge PDF', 'merge-pdf')">
+                            <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-green-500/30 transition-all duration-300">
+                                <i class="fas fa-object-group text-green-400 text-xl"></i>
+                            </div>
+                            <h3 class="font-semibold text-lg mb-2">Merge PDF</h3>
+                            <p class="text-white/60 text-sm">Combine multiple PDF files into one</p>
+                        </div>
+
+                        <!-- Split PDF -->
+                        <div class="group glassmorphism rounded-xl p-6 hover:scale-105 transition-all duration-300 cursor-pointer" onclick="openTool('Split PDF', 'split-pdf')">
+                            <div class="w-12 h-12 bg-yellow-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-yellow-500/30 transition-all duration-300">
+                                <i class="fas fa-cut text-yellow-400 text-xl"></i>
+                            </div>
+                            <h3 class="font-semibold text-lg mb-2">Split PDF</h3>
+                            <p class="text-white/60 text-sm">Extract specific pages from PDF files</p>
+                        </div>
+
+                        <!-- Compress PDF -->
+                        <div class="group glassmorphism rounded-xl p-6 hover:scale-105 transition-all duration-300 cursor-pointer" onclick="openTool('Compress PDF', 'compress-pdf')">
+                            <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-500/30 transition-all duration-300">
+                                <i class="fas fa-compress text-purple-400 text-xl"></i>
+                            </div>
+                            <h3 class="font-semibold text-lg mb-2">Compress PDF</h3>
+                            <p class="text-white/60 text-sm">Reduce PDF file size without quality loss</p>
+                        </div>
+
+                        <!-- More PDF tools... -->
+                        <div class="group glassmorphism rounded-xl p-6 hover:scale-105 transition-all duration-300 cursor-pointer" onclick="openTool('PDF to JPG', 'pdf-to-jpg')">
+                            <div class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-pink-500/30 transition-all duration-300">
+                                <i class="fas fa-image text-pink-400 text-xl"></i>
+                            </div>
+                            <h3 class="font-semibold text-lg mb-2">PDF to JPG</h3>
+                            <p class="text-white/60 text-sm">Convert PDF pages to JPG images</p>
+                        </div>
+
+                        <div class="group glassmorphism rounded-xl p-6 hover:scale-105 transition-all duration-300 cursor-pointer" onclick="openTool('PDF to Excel', 'pdf-to-excel')">
+                            <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-emerald-500/30 transition-all duration-300">
+                                <i class="fas fa-file-excel text-emerald-400 text-xl"></i>
+                            </div>
+                            <h3 class="font-semibold text-lg mb-2">PDF to Excel</h3>
+                            <p class="text-white/60 text-sm">Extract tables from PDF to Excel</p>
+                        </div>
+
+                        <div class="group glassmorphism rounded-xl p-6 hover:scale-105 transition-all duration-300 cursor-pointer" onclick="openTool('Protect PDF', 'protect-pdf')">
+                            <div class="w-12 h-12 bg-orange-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-orange-500/30 transition-all duration-300">
+                                <i class="fas fa-lock text-orange-400 text-xl"></i>
+                            </div>
+                            <h3 class="font-semibold text-lg mb-2">Protect PDF</h3>
+                            <p class="text-white/60 text-sm">Add password protection to PDF files</p>
+                        </div>
+                    </div>
+
+                    <!-- Additional Ad Slots -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mt-12">
+                        <div class="ad-slot rounded-xl flex items-center justify-center">
+                            <div class="text-center text-white/60">
+                                <i class="fas fa-ad text-lg mb-1"></i>
+                                <p class="text-xs">Ad Slot 2</p>
+                            </div>
+                        </div>
+                        <div class="ad-slot rounded-xl flex items-center justify-center">
+                            <div class="text-center text-white/60">
+                                <i class="fas fa-ad text-lg mb-1"></i>
+                                <p class="text-xs">Ad Slot 3</p>
+                            </div>
+                        </div>
+                        <div class="ad-slot rounded-xl flex items-center justify-center">
+                            <div class="text-center text-white/60">
+                                <i class="fas fa-ad text-lg mb-1"></i>
+                                <p class="text-xs">Ad Slot 4</p>
+                            </div>
+                        </div>
+                        <div class="ad-slot rounded-xl flex items-center justify-center">
+                            <div class="text-center text-white/60">
+                                <i class="fas fa-ad text-lg mb-1"></i>
+                                <p class="text-xs">Ad Slot 5</p>
+                            </div>
+                        </div>
+                        <div class="ad-slot rounded-xl flex items-center justify-center">
+                            <div class="text-center text-white/60">
+                                <i class="fas fa-ad text-lg mb-1"></i>
+                                <p class="text-xs">Ad Slot 6</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Similar sections for other tool categories... -->
+        <!-- Image Tools View -->
+        <div id="image-tools-view" class="view-content hidden">
+            <section class="py-12 px-4 sm:px-6 lg:px-8">
+                <div class="max-w-7xl mx-auto">
+                    <div class="text-center mb-12">
+                        <h1 class="text-4xl md:text-5xl font-poppins font-bold mb-4 gradient-text">Image Tools & Converters</h1>
+                        <p class="text-xl text-white/80 max-w-3xl mx-auto">Professional image processing and conversion tools</p>
+                    </div>
+
+                    <!-- Ad Slot -->
+                    <div class="ad-slot rounded-xl mx-4 mb-8 flex items-center justify-center">
+                        <div class="text-center text-white/60">
+                            <i class="fas fa-ad text-2xl mb-2"></i>
+                            <p class="text-sm">Advertisement Slot 1</p>
+                            <p class="text-xs">728x90 Leaderboard</p>
+                        </div>
+                    </div>
+
+                    <!-- Image Tools Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                        <div class="group glassmorphism rounded-xl p-6 hover:scale-105 transition-all duration-300 cursor-pointer" onclick="openTool('Image Resize', 'image-resize')">
+                            <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-500/30 transition-all duration-300">
+                                <i class="fas fa-expand-arrows-alt text-blue-400 text-xl"></i>
+                            </div>
+                            <h3 class="font-semibold text-lg mb-2">Image Resize</h3>
+                            <p class="text-white/60 text-sm">Resize images to specific dimensions</p>
+                        </div>
+
+                        <div class="group glassmorphism rounded-xl p-6 hover:scale-105 transition-all duration-300 cursor-pointer" onclick="openTool('Image Compress', 'image-compress')">
+                            <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-green-500/30 transition-all duration-300">
+                                <i class="fas fa-compress text-green-400 text-xl"></i>
+                            </div>
+                            <h3 class="font-semibold text-lg mb-2">Image Compress</h3>
+                            <p class="text-white/60 text-sm">Reduce image file size</p>
+                        </div>
+
+                        <!-- Add more image tools here -->
+                    </div>
+
+                    <!-- Additional Ad Slots -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mt-12">
+                        <div class="ad-slot rounded-xl flex items-center justify-center">
+                            <div class="text-center text-white/60">
+                                <i class="fas fa-ad text-lg mb-1"></i>
+                                <p class="text-xs">Ad Slot 2</p>
+                            </div>
+                        </div>
+                        <div class="ad-slot rounded-xl flex items-center justify-center">
+                            <div class="text-center text-white/60">
+                                <i class="fas fa-ad text-lg mb-1"></i>
+                                <p class="text-xs">Ad Slot 3</p>
+                            </div>
+                        </div>
+                        <div class="ad-slot rounded-xl flex items-center justify-center">
+                            <div class="text-center text-white/60">
+                                <i class="fas fa-ad text-lg mb-1"></i>
+                                <p class="text-xs">Ad Slot 4</p>
+                            </div>
+                        </div>
+                        <div class="ad-slot rounded-xl flex items-center justify-center">
+                            <div class="text-center text-white/60">
+                                <i class="fas fa-ad text-lg mb-1"></i>
+                                <p class="text-xs">Ad Slot 5</p>
+                            </div>
+                        </div>
+                        <div class="ad-slot rounded-xl flex items-center justify-center">
+                            <div class="text-center text-white/60">
+                                <i class="fas fa-ad text-lg mb-1"></i>
+                                <p class="text-xs">Ad Slot 6</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Audio Tools View -->
+        <div id="audio-tools-view" class="view-content hidden">
+            <section class="py-12 px-4 sm:px-6 lg:px-8">
+                <div class="max-w-7xl mx-auto">
+                    <div class="text-center mb-12">
+                        <h1 class="text-4xl md:text-5xl font-poppins font-bold mb-4 gradient-text">Audio Tools & Converters</h1>
+                        <p class="text-xl text-white/80 max-w-3xl mx-auto">Professional audio processing and conversion tools</p>
+                    </div>
+
+                    <!-- Similar structure with audio tools -->
+                    <div class="ad-slot rounded-xl mx-4 mb-8 flex items-center justify-center">
+                        <div class="text-center text-white/60">
+                            <i class="fas fa-ad text-2xl mb-2"></i>
+                            <p class="text-sm">Advertisement Slot 1</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                        <div class="group glassmorphism rounded-xl p-6 hover:scale-105 transition-all duration-300 cursor-pointer" onclick="openTool('Audio Converter', 'audio-converter')">
+                            <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-500/30 transition-all duration-300">
+                                <i class="fas fa-music text-purple-400 text-xl"></i>
+                            </div>
+                            <h3 class="font-semibold text-lg mb-2">Audio Converter</h3>
+                            <p class="text-white/60 text-sm">Convert between audio formats</p>
+                        </div>
+                        <!-- Add more audio tools -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Text Tools View -->
+        <div id="text-tools-view" class="view-content hidden">
+            <section class="py-12 px-4 sm:px-6 lg:px-8">
+                <div class="max-w-7xl mx-auto">
+                    <div class="text-center mb-12">
+                        <h1 class="text-4xl md:text-5xl font-poppins font-bold mb-4 gradient-text">Text Tools & Converters</h1>
+                        <p class="text-xl text-white/80 max-w-3xl mx-auto">Professional text processing and formatting tools</p>
+                    </div>
+
+                    <div class="ad-slot rounded-xl mx-4 mb-8 flex items-center justify-center">
+                        <div class="text-center text-white/60">
+                            <i class="fas fa-ad text-2xl mb-2"></i>
+                            <p class="text-sm">Advertisement Slot 1</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                        <div class="group glassmorphism rounded-xl p-6 hover:scale-105 transition-all duration-300 cursor-pointer" onclick="openTool('Case Converter', 'case-converter')">
+                            <div class="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-cyan-500/30 transition-all duration-300">
+                                <i class="fas fa-font text-cyan-400 text-xl"></i>
+                            </div>
+                            <h3 class="font-semibold text-lg mb-2">Case Converter</h3>
+                            <p class="text-white/60 text-sm">Convert text case (upper, lower, title)</p>
+                        </div>
+                        <!-- Add more text tools -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Productivity Tools View -->
+        <div id="productivity-tools-view" class="view-content hidden">
+            <section class="py-12 px-4 sm:px-6 lg:px-8">
+                <div class="max-w-7xl mx-auto">
+                    <div class="text-center mb-12">
+                        <h1 class="text-4xl md:text-5xl font-poppins font-bold mb-4 gradient-text">Productivity & Financial Tools</h1>
+                        <p class="text-xl text-white/80 max-w-3xl mx-auto">Boost your productivity with our comprehensive tools</p>
+                    </div>
+
+                    <div class="ad-slot rounded-xl mx-4 mb-8 flex items-center justify-center">
+                        <div class="text-center text-white/60">
+                            <i class="fas fa-ad text-2xl mb-2"></i>
+                            <p class="text-sm">Advertisement Slot 1</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                        <div class="group glassmorphism rounded-xl p-6 hover:scale-105 transition-all duration-300 cursor-pointer" onclick="openTool('Calculator', 'calculator')">
+                            <div class="w-12 h-12 bg-orange-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-orange-500/30 transition-all duration-300">
+                                <i class="fas fa-calculator text-orange-400 text-xl"></i>
+                            </div>
+                            <h3 class="font-semibold text-lg mb-2">Calculator</h3>
+                            <p class="text-white/60 text-sm">Advanced scientific calculator</p>
+                        </div>
+                        <!-- Add more productivity tools -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Universal Tool Interface -->
+        <div id="tool-interface" class="view-content hidden">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <!-- Tool Header -->
+                <div class="flex items-center justify-between mb-8">
+                    <div class="flex items-center">
+                        <button onclick="goBack()" class="mr-4 p-2 rounded-lg glassmorphism hover:bg-white/10 transition-all duration-300">
+                            <i class="fas fa-arrow-left text-xl"></i>
+                        </button>
+                        <div>
+                            <h1 id="tool-title" class="text-2xl md:text-3xl font-poppins font-bold gradient-text">Tool Name</h1>
+                            <p class="text-white/70">Professional tool for your needs</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ad Slot 1 -->
+                <div class="ad-slot rounded-xl mb-8 flex items-center justify-center">
+                    <div class="text-center text-white/60">
+                        <i class="fas fa-ad text-2xl mb-2"></i>
+                        <p class="text-sm">Tool Advertisement Slot 1</p>
+                        <p class="text-xs">728x90 Leaderboard</p>
+                    </div>
+                </div>
+
+                <!-- Tool Interface Content -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Main Tool Area -->
+                    <div class="lg:col-span-2">
+                        <div class="glassmorphism rounded-2xl p-6 mb-6">
+                            <div id="tool-content" class="space-y-6">
+                                <!-- File Upload Area -->
+                                <div class="border-2 border-dashed border-primary/40 rounded-xl p-12 text-center hover:border-primary/60 transition-all duration-300 cursor-pointer">
+                                    <div class="mb-4">
+                                        <i class="fas fa-cloud-upload-alt text-4xl text-primary/70"></i>
+                                    </div>
+                                    <h3 class="text-xl font-semibold mb-2">Drop files here or click to upload</h3>
+                                    <p class="text-white/60">Supports multiple file formats</p>
+                                    <button class="mt-4 gradient-bg px-6 py-3 rounded-lg hover:scale-105 transition-all duration-300">
+                                        <i class="fas fa-plus mr-2"></i>Select Files
+                                    </button>
+                                </div>
+
+                                <!-- Processing Options -->
+                                <div class="glassmorphism rounded-xl p-4">
+                                    <h3 class="font-semibold mb-4">Processing Options</h3>
+                                    <div class="space-y-3">
+                                        <div class="flex items-center justify-between">
+                                            <span class="text-white/80">Quality</span>
+                                            <select class="bg-cardDark border border-white/20 rounded-lg px-3 py-2 text-white">
+                                                <option>High</option>
+                                                <option>Medium</option>
+                                                <option>Low</option>
+                                            </select>
+                                        </div>
+                                        <div class="flex items-center justify-between">
+                                            <span class="text-white/80">Format</span>
+                                            <select class="bg-cardDark border border-white/20 rounded-lg px-3 py-2 text-white">
+                                                <option>Auto</option>
+                                                <option>PDF</option>
+                                                <option>DOCX</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <button class="w-full mt-4 gradient-bg py-3 rounded-lg hover:scale-105 transition-all duration-300 font-semibold">
+                                        <i class="fas fa-cog mr-2"></i>Process Files
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <div class="lg:col-span-1">
+                        <!-- Ad Slot 2 -->
+                        <div class="ad-slot rounded-xl mb-6 flex items-center justify-center h-64">
+                            <div class="text-center text-white/60">
+                                <i class="fas fa-ad text-2xl mb-2"></i>
+                                <p class="text-sm">Tool Advertisement Slot 2</p>
+                                <p class="text-xs">300x250 Medium Rectangle</p>
+                            </div>
+                        </div>
+
+                        <!-- Related Tools -->
+                        <div class="glassmorphism rounded-xl p-4">
+                            <h3 class="font-semibold mb-4">Related Tools</h3>
+                            <div class="space-y-2">
+                                <div class="flex items-center p-2 rounded-lg hover:bg-white/5 transition-all duration-300 cursor-pointer">
+                                    <i class="fas fa-file-pdf text-red-400 mr-3"></i>
+                                    <span class="text-sm">PDF Merger</span>
+                                </div>
+                                <div class="flex items-center p-2 rounded-lg hover:bg-white/5 transition-all duration-300 cursor-pointer">
+                                    <i class="fas fa-compress text-blue-400 mr-3"></i>
+                                    <span class="text-sm">PDF Compressor</span>
+                                </div>
+                                <div class="flex items-center p-2 rounded-lg hover:bg-white/5 transition-all duration-300 cursor-pointer">
+                                    <i class="fas fa-cut text-green-400 mr-3"></i>
+                                    <span class="text-sm">PDF Splitter</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Admin Portal -->
+        <div id="admin-view" class="view-content hidden">
+            <section class="py-12 px-4 sm:px-6 lg:px-8">
+                <div class="max-w-7xl mx-auto">
+                    <!-- Admin Login -->
+                    <div id="admin-login" class="max-w-md mx-auto">
+                        <div class="glassmorphism rounded-2xl p-8 text-center">
+                            <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mx-auto mb-6">
+                                <i class="fas fa-user-shield text-2xl text-white"></i>
+                            </div>
+                            <h2 class="text-2xl font-poppins font-bold mb-6 gradient-text">Admin Portal</h2>
+                            <form class="space-y-4">
+                                <input type="email" placeholder="Admin Email" class="w-full bg-cardDark border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-primary transition-colors duration-300">
+                                <input type="password" placeholder="Password" class="w-full bg-cardDark border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-primary transition-colors duration-300">
+                                <button type="button" onclick="showAdminDashboard()" class="w-full gradient-bg py-3 rounded-lg hover:scale-105 transition-all duration-300 font-semibold">
+                                    <i class="fas fa-sign-in-alt mr-2"></i>Login with Supabase
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Admin Dashboard -->
+                    <div id="admin-dashboard" class="hidden">
+                        <div class="flex items-center justify-between mb-8">
+                            <h1 class="text-3xl font-poppins font-bold gradient-text">Admin Dashboard</h1>
+                            <button onclick="hideAdminDashboard()" class="bg-red-500/20 hover:bg-red-500/30 px-4 py-2 rounded-lg transition-all duration-300">
+                                <i class="fas fa-sign-out-alt mr-2"></i>Logout
+                            </button>
+                        </div>
+
+                        <!-- Stats Grid -->
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                            <div class="glassmorphism rounded-xl p-6">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <p class="text-white/60 text-sm">Total Users</p>
+                                        <p class="text-2xl font-bold gradient-text">12,543</p>
+                                    </div>
+                                    <i class="fas fa-users text-2xl text-primary"></i>
+                                </div>
+                            </div>
+                            <div class="glassmorphism rounded-xl p-6">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <p class="text-white/60 text-sm">Files Processed</p>
+                                        <p class="text-2xl font-bold gradient-text">1,234,567</p>
+                                    </div>
+                                    <i class="fas fa-file text-2xl text-success"></i>
+                                </div>
+                            </div>
+                            <div class="glassmorphism rounded-xl p-6">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <p class="text-white/60 text-sm">Ad Revenue</p>
+                                        <p class="text-2xl font-bold gradient-text">$5,432</p>
+                                    </div>
+                                    <i class="fas fa-dollar-sign text-2xl text-accent"></i>
+                                </div>
+                            </div>
+                            <div class="glassmorphism rounded-xl p-6">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <p class="text-white/60 text-sm">Active Tools</p>
+                                        <p class="text-2xl font-bold gradient-text">42</p>
+                                    </div>
+                                    <i class="fas fa-tools text-2xl text-secondary"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ad Management -->
+                        <div class="glassmorphism rounded-2xl p-6 mb-8">
+                            <h2 class="text-xl font-semibold mb-4">Ad Management</h2>
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left">
+                                    <thead class="border-b border-white/20">
+                                        <tr class="text-white/80">
+                                            <th class="pb-3">Slot ID</th>
+                                            <th class="pb-3">Location</th>
+                                            <th class="pb-3">Status</th>
+                                            <th class="pb-3">Revenue</th>
+                                            <th class="pb-3">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="space-y-2">
+                                        <tr class="border-b border-white/10">
+                                            <td class="py-3">AD-001</td>
+                                            <td class="py-3">Home Header</td>
+                                            <td class="py-3"><span class="bg-green-500/20 text-green-400 px-2 py-1 rounded text-xs">Active</span></td>
+                                            <td class="py-3">$234.56</td>
+                                            <td class="py-3">
+                                                <button class="text-primary hover:text-accent transition-colors duration-300"><i class="fas fa-edit"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-b border-white/10">
+                                            <td class="py-3">AD-002</td>
+                                            <td class="py-3">PDF Tools Sidebar</td>
+                                            <td class="py-3"><span class="bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded text-xs">Pending</span></td>
+                                            <td class="py-3">$123.45</td>
+                                            <td class="py-3">
+                                                <button class="text-primary hover:text-accent transition-colors duration-300"><i class="fas fa-edit"></i></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Analytics Chart Placeholder -->
+                        <div class="glassmorphism rounded-2xl p-6">
+                            <h2 class="text-xl font-semibold mb-4">Analytics Overview</h2>
+                            <div class="h-64 flex items-center justify-center border border-white/20 rounded-lg">
+                                <div class="text-center text-white/60">
+                                    <i class="fas fa-chart-line text-4xl mb-4"></i>
+                                    <p>Analytics Chart</p>
+                                    <p class="text-sm">Integration with analytics API</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-cardDark/50 border-t border-white/10 py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="gradient-text font-poppins font-bold text-xl mb-4">
+                        <i class="fas fa-tools mr-2"></i>ToolBox Pro
+                    </div>
+                    <p class="text-white/70 mb-4 max-w-md">
+                        Professional online tools and converters for all your digital needs. Fast, secure, and completely free to use.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white/60 hover:text-primary transition-colors duration-300">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-white/60 hover:text-primary transition-colors duration-300">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-white/60 hover:text-primary transition-colors duration-300">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold mb-4">Tools</h3>
+                    <ul class="space-y-2 text-white/70">
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">PDF Tools</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Image Tools</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Audio Tools</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Text Tools</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold mb-4">Support</h3>
+                    <ul class="space-y-2 text-white/70">
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Help Center</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 mt-8 pt-8 text-center text-white/60">
+                <p>&copy; 2024 ToolBox Pro. All rights reserved. Built with ❤️ for productivity.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <button class="gradient-bg w-14 h-14 rounded-full shadow-lg hover:scale-110 transition-all duration-300 animate-float">
+            <i class="fas fa-question text-white text-xl"></i>
+        </button>
+    </div>
+
+    <script>
+        (() => {
+            let currentView = 'home';
+            let previousView = 'home';
+
+            // Show specific view
+            window.showView = (viewName) => {
+                // Hide all views
+                document.querySelectorAll('.view-content').forEach(view => {
+                    view.classList.add('hidden');
+                });
+                
+                // Update previous view
+                previousView = currentView;
+                currentView = viewName;
+                
+                // Show selected view
+                const targetView = document.getElementById(viewName + '-view');
+                if (targetView) {
+                    targetView.classList.remove('hidden');
+                    targetView.style.animation = 'fadeIn 0.3s ease-out';
+                }
+
+                // Update URL hash for SEO
+                window.location.hash = viewName;
+                
+                // Update active nav item
+                updateActiveNav(viewName);
+                
+                // Close mobile menu if open
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            };
+
+            // Open tool interface
+            window.openTool = (toolName, toolId) => {
+                document.getElementById('tool-title').textContent = toolName;
+                previousView = currentView;
+                showView('tool-interface');
+                
+                // TODO: Load specific tool configuration based on toolId
+                // TODO: Initialize tool-specific functionality
+                // TODO: Set up file upload handlers
+                // TODO: Configure processing options
+            };
+
+            // Go back to previous view
+            window.goBack = () => {
+                showView(previousView);
+            };
+
+            // Toggle mobile menu
+            window.toggleMobileMenu = () => {
+                const mobileMenu = document.getElementById('mobile-menu');
+                mobileMenu.classList.toggle('hidden');
+            };
+
+            // Admin functions
+            window.showAdminDashboard = () => {
+                document.getElementById('admin-login').classList.add('hidden');
+                document.getElementById('admin-dashboard').classList.remove('hidden');
+                // TODO: Authenticate with Supabase
+                // TODO: Load real admin data
+                // TODO: Set up real-time updates
+            };
+
+            window.hideAdminDashboard = () => {
+                document.getElementById('admin-login').classList.remove('hidden');
+                document.getElementById('admin-dashboard').classList.add('hidden');
+                // TODO: Clear admin session
+                // TODO: Redirect to login
+            };
+
+            // Update active navigation item
+            function updateActiveNav(viewName) {
+                document.querySelectorAll('.nav-item').forEach(item => {
+                    item.classList.remove('text-primary');
+                    item.classList.add('text-white/80');
+                });
+                
+                // Find and highlight active nav item
+                const activeButton = document.querySelector(`[onclick="showView('${viewName}')"]`);
+                if (activeButton && activeButton.classList.contains('nav-item')) {
+                    activeButton.classList.add('text-primary');
+                    activeButton.classList.remove('text-white/80');
+                }
+            }
+
+            // Initialize app
+            function initApp() {
+                // Check URL hash
+                const hash = window.location.hash.slice(1);
+                if (hash && hash !== '') {
+                    showView(hash);
+                } else {
+                    showView('home');
+                }
+
+                // Admin toggle (hidden by default, can be activated via console)
+                // To show admin toggle: document.querySelector('.admin-toggle').classList.remove('hidden');
+                console.log('Admin access: document.querySelector(".admin-toggle").classList.remove("hidden");');
+                
+                // SEO optimization
+                updateMetaTags();
+                
+                // Performance monitoring
+                monitorPerformance();
+            }
+
+            // Update meta tags for SEO
+            function updateMetaTags() {
+                // TODO: Update meta tags based on current view
+                // TODO: Implement structured data
+                // TODO: Update Open Graph tags
+            }
+
+            // Performance monitoring
+            function monitorPerformance() {
+                // TODO: Track page load times
+                // TODO: Monitor user interactions
+                // TODO: Implement analytics
+            }
+
+            // Handle browser back/forward
+            window.addEventListener('popstate', (event) => {
+                const hash = window.location.hash.slice(1) || 'home';
+                showView(hash);
+            });
+
+            // Initialize when DOM is loaded
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initApp);
+            } else {
+                initApp();
+            }
+
+            // Responsive navigation handling
+            window.addEventListener('resize', () => {
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (window.innerWidth >= 768 && mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+
+            // Performance optimization - lazy load animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe animated elements
+            document.querySelectorAll('[class*="animate-"]').forEach(el => {
+                el.style.animationPlayState = 'paused';
+                observer.observe(el);
+            });
+        })();
+    </script>
+</body>
+</html>

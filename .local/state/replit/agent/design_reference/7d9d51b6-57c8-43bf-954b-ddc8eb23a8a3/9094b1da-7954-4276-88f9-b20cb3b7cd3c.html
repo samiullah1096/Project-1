@@ -1,0 +1,751 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToolSuite Pro - Ultimate Online Tools & Converters | PDF, Image, Audio, Text Tools</title>
+    <meta name="description" content="Free online tools and converters for PDF, Image, Audio, Text processing. Convert, compress, edit files instantly. 80+ professional tools in one platform.">
+    <meta name="keywords" content="PDF converter, image converter, audio tools, text tools, productivity tools, online converter, file converter">
+    <meta name="author" content="ToolSuite Pro">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="ToolSuite Pro - Ultimate Online Tools & Converters">
+    <meta property="og:description" content="Free online tools and converters for PDF, Image, Audio, Text processing. 80+ professional tools in one platform.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://toolsuitepro.com">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=630">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ToolSuite Pro - Ultimate Online Tools & Converters">
+    <meta name="twitter:description" content="Free online tools and converters for PDF, Image, Audio, Text processing. 80+ professional tools in one platform.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=630">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "ToolSuite Pro",
+        "description": "Ultimate online tools and converters platform",
+        "url": "https://toolsuitepro.com",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+    
+    <link rel="canonical" href="https://toolsuitepro.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#667EEA',
+                        secondary: '#764BA2',
+                        accent: '#F093FB',
+                        background: '#0F0F23',
+                        cards: '#1A1A2E',
+                        success: '#4ECDC4'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'poppins': ['Poppins', 'sans-serif']
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'slide-up': 'slide-up 0.5s ease-out',
+                        'fade-in': 'fade-in 0.6s ease-out'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        @keyframes glow {
+            from { box-shadow: 0 0 5px #667EEA, 0 0 10px #667EEA, 0 0 15px #667EEA; }
+            to { box-shadow: 0 0 10px #667EEA, 0 0 20px #667EEA, 0 0 30px #667EEA; }
+        }
+        @keyframes slide-up {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .glassmorphism {
+            background: rgba(26, 26, 46, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #667EEA 0%, #F093FB 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+        }
+        .feature-card:hover {
+            background: rgba(26, 26, 46, 0.9);
+        }
+    </style>
+</head>
+<body class="bg-background text-white font-poppins">
+    <!-- Navigation Header -->
+    <nav class="glassmorphism fixed w-full top-0 z-50 border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-4">
+                    <div class="gradient-bg p-2 rounded-lg">
+                        <i class="fas fa-tools text-white text-xl"></i>
+                    </div>
+                    <h1 class="text-xl font-inter font-bold gradient-text">ToolSuite Pro</h1>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="hover:text-primary transition-colors font-medium">Home</a>
+                    <a href="#pdf-tools" class="hover:text-primary transition-colors font-medium">PDF Tools</a>
+                    <a href="#image-tools" class="hover:text-primary transition-colors font-medium">Image Tools</a>
+                    <a href="#audio-tools" class="hover:text-primary transition-colors font-medium">Audio Tools</a>
+                    <a href="#text-tools" class="hover:text-primary transition-colors font-medium">Text Tools</a>
+                    <a href="#productivity" class="hover:text-primary transition-colors font-medium">Productivity</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <button class="hidden md:block px-4 py-2 bg-primary/20 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all">
+                        Sign In
+                    </button>
+                    <button class="md:hidden text-white">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-12 px-4 relative overflow-hidden">
+        <div class="absolute inset-0 gradient-bg opacity-5"></div>
+        <div class="max-w-7xl mx-auto text-center relative z-10">
+            <div class="animate-fade-in">
+                <h1 class="text-4xl md:text-6xl font-inter font-bold mb-6 leading-tight">
+                    Ultimate Online <span class="gradient-text">Tools & Converters</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto font-light">
+                    Transform, convert, and optimize your files with 80+ professional tools. 
+                    PDF, Image, Audio, Text processing made simple and fast.
+                </p>
+                
+                <!-- Search Bar -->
+                <div class="max-w-2xl mx-auto mb-12">
+                    <div class="glassmorphism rounded-full p-2 flex items-center">
+                        <i class="fas fa-search text-gray-400 ml-4"></i>
+                        <input type="text" placeholder="Search tools... (e.g., PDF to Word, Image Compressor)" 
+                               class="flex-1 bg-transparent px-4 py-3 text-white placeholder-gray-400 focus:outline-none">
+                        <button class="gradient-bg px-6 py-3 rounded-full text-white font-medium hover:opacity-90 transition-opacity">
+                            Search
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold gradient-text">80+</div>
+                        <div class="text-gray-400">Tools Available</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold gradient-text">1M+</div>
+                        <div class="text-gray-400">Files Processed</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold gradient-text">100%</div>
+                        <div class="text-gray-400">Free to Use</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold gradient-text">24/7</div>
+                        <div class="text-gray-400">Available</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ad Slot 1 -->
+    <div class="max-w-7xl mx-auto px-4 mb-12">
+        <div class="glassmorphism rounded-lg p-8 text-center border-dashed border-2 border-gray-600">
+            <div class="text-gray-400 mb-2">Advertisement</div>
+            <div class="h-24 bg-gray-700/30 rounded flex items-center justify-center">
+                <span class="text-gray-500">728x90 Banner Ad Slot</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tool Categories -->
+    <section class="py-12 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-inter font-bold mb-4">Explore Tool Categories</h2>
+                <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+                    Professional-grade tools for all your file processing needs. Choose a category to get started.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- PDF Tools Category -->
+                <div class="tool-card glassmorphism rounded-xl p-6 cursor-pointer transition-all duration-300 hover:scale-105" data-category="pdf">
+                    <!-- Modern office workspace with documents and laptop -->
+                    <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200" 
+                         alt="PDF tools and document processing" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <div class="flex items-center mb-4">
+                        <div class="gradient-bg p-3 rounded-lg mr-4">
+                            <i class="fas fa-file-pdf text-white text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-1">PDF Tools & Converters</h3>
+                            <p class="text-gray-400">20+ Tools Available</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">Convert, merge, split, compress and edit PDF files with professional-grade tools.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm">PDF to Word</span>
+                        <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm">Merge PDF</span>
+                        <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm">Compress</span>
+                    </div>
+                    <button class="w-full gradient-bg py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">
+                        Explore PDF Tools <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+
+                <!-- Image Tools Category -->
+                <div class="tool-card glassmorphism rounded-xl p-6 cursor-pointer transition-all duration-300 hover:scale-105" data-category="image">
+                    <!-- Creative design workspace with graphics and illustrations -->
+                    <img src="https://images.unsplash.com/photo-1609921212029-bb5a28e60960?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200" 
+                         alt="Image editing and design tools" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <div class="flex items-center mb-4">
+                        <div class="gradient-bg p-3 rounded-lg mr-4">
+                            <i class="fas fa-image text-white text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-1">Image Tools & Converters</h3>
+                            <p class="text-gray-400">25+ Tools Available</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">Edit, convert, compress and enhance images with advanced processing tools.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-accent/20 text-accent px-3 py-1 rounded-full text-sm">Background Remover</span>
+                        <span class="bg-accent/20 text-accent px-3 py-1 rounded-full text-sm">Resize</span>
+                        <span class="bg-accent/20 text-accent px-3 py-1 rounded-full text-sm">Compress</span>
+                    </div>
+                    <button class="w-full gradient-bg py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">
+                        Explore Image Tools <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+
+                <!-- Audio Tools Category -->
+                <div class="tool-card glassmorphism rounded-xl p-6 cursor-pointer transition-all duration-300 hover:scale-105" data-category="audio">
+                    <!-- Professional audio recording studio setup -->
+                    <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200" 
+                         alt="Audio recording and editing equipment" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <div class="flex items-center mb-4">
+                        <div class="gradient-bg p-3 rounded-lg mr-4">
+                            <i class="fas fa-volume-up text-white text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-1">Audio Tools & Converters</h3>
+                            <p class="text-gray-400">15+ Tools Available</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">Convert, compress, trim and enhance audio files with professional quality.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-success/20 text-success px-3 py-1 rounded-full text-sm">MP3 Converter</span>
+                        <span class="bg-success/20 text-success px-3 py-1 rounded-full text-sm">Trim Audio</span>
+                        <span class="bg-success/20 text-success px-3 py-1 rounded-full text-sm">Merge</span>
+                    </div>
+                    <button class="w-full gradient-bg py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">
+                        Explore Audio Tools <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+
+                <!-- Text Tools Category -->
+                <div class="tool-card glassmorphism rounded-xl p-6 cursor-pointer transition-all duration-300 hover:scale-105" data-category="text">
+                    <!-- Modern writer's workspace with laptop and notes -->
+                    <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200" 
+                         alt="Text editing and writing tools" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <div class="flex items-center mb-4">
+                        <div class="gradient-bg p-3 rounded-lg mr-4">
+                            <i class="fas fa-font text-white text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-1">Text Tools & Converters</h3>
+                            <p class="text-gray-400">20+ Tools Available</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">Analyze, format, convert and enhance text with powerful processing tools.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm">Word Counter</span>
+                        <span class="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm">Case Converter</span>
+                        <span class="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm">Grammar Check</span>
+                    </div>
+                    <button class="w-full gradient-bg py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">
+                        Explore Text Tools <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+
+                <!-- Productivity Tools Category -->
+                <div class="tool-card glassmorphism rounded-xl p-6 cursor-pointer transition-all duration-300 hover:scale-105" data-category="productivity">
+                    <!-- Organized productivity workspace with charts and analytics -->
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200" 
+                         alt="Productivity and analytics dashboard" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <div class="flex items-center mb-4">
+                        <div class="gradient-bg p-3 rounded-lg mr-4">
+                            <i class="fas fa-chart-line text-white text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-1">Productivity & Financial Tools</h3>
+                            <p class="text-gray-400">15+ Tools Available</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">Boost productivity with calculators, converters and business tools.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm">Calculator</span>
+                        <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm">Unit Converter</span>
+                        <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm">QR Generator</span>
+                    </div>
+                    <button class="w-full gradient-bg py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">
+                        Explore Productivity Tools <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+
+                <!-- All Tools Overview -->
+                <div class="tool-card glassmorphism rounded-xl p-6 cursor-pointer transition-all duration-300 hover:scale-105 border-2 border-primary/30">
+                    <!-- Tech workspace showing multiple devices and tools -->
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200" 
+                         alt="Complete toolkit and tech workspace" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <div class="flex items-center mb-4">
+                        <div class="gradient-bg p-3 rounded-lg mr-4 animate-glow">
+                            <i class="fas fa-star text-white text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-1">All Tools Suite</h3>
+                            <p class="text-primary">Complete Access</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">Access all 80+ professional tools in one unified dashboard experience.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-gradient-to-r from-primary to-accent text-white px-3 py-1 rounded-full text-sm">Premium</span>
+                        <span class="bg-gradient-to-r from-primary to-accent text-white px-3 py-1 rounded-full text-sm">All-in-One</span>
+                    </div>
+                    <button class="w-full bg-gradient-to-r from-primary to-accent py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">
+                        View All Tools <i class="fas fa-crown ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ad Slot 2 -->
+    <div class="max-w-7xl mx-auto px-4 mb-12">
+        <div class="glassmorphism rounded-lg p-8 text-center border-dashed border-2 border-gray-600">
+            <div class="text-gray-400 mb-2">Advertisement</div>
+            <div class="h-24 bg-gray-700/30 rounded flex items-center justify-center">
+                <span class="text-gray-500">728x90 Banner Ad Slot</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popular Tools Section -->
+    <section class="py-12 px-4 bg-gradient-to-b from-transparent to-cards/20">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-inter font-bold mb-4">Most Popular Tools</h2>
+                <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+                    Quick access to our most frequently used conversion and editing tools
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <div class="feature-card glassmorphism rounded-lg p-4 text-center cursor-pointer transition-all hover:scale-105">
+                    <div class="bg-red-500/20 p-3 rounded-full w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+                        <i class="fas fa-file-pdf text-red-400 text-xl"></i>
+                    </div>
+                    <h4 class="font-medium mb-1">PDF to Word</h4>
+                    <p class="text-sm text-gray-400">Convert instantly</p>
+                </div>
+
+                <div class="feature-card glassmorphism rounded-lg p-4 text-center cursor-pointer transition-all hover:scale-105">
+                    <div class="bg-blue-500/20 p-3 rounded-full w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+                        <i class="fas fa-compress text-blue-400 text-xl"></i>
+                    </div>
+                    <h4 class="font-medium mb-1">Image Compressor</h4>
+                    <p class="text-sm text-gray-400">Reduce file size</p>
+                </div>
+
+                <div class="feature-card glassmorphism rounded-lg p-4 text-center cursor-pointer transition-all hover:scale-105">
+                    <div class="bg-green-500/20 p-3 rounded-full w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+                        <i class="fas fa-crop text-green-400 text-xl"></i>
+                    </div>
+                    <h4 class="font-medium mb-1">Background Remover</h4>
+                    <p class="text-sm text-gray-400">AI-powered</p>
+                </div>
+
+                <div class="feature-card glassmorphism rounded-lg p-4 text-center cursor-pointer transition-all hover:scale-105">
+                    <div class="bg-purple-500/20 p-3 rounded-full w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+                        <i class="fas fa-volume-up text-purple-400 text-xl"></i>
+                    </div>
+                    <h4 class="font-medium mb-1">Audio Converter</h4>
+                    <p class="text-sm text-gray-400">High quality</p>
+                </div>
+
+                <div class="feature-card glassmorphism rounded-lg p-4 text-center cursor-pointer transition-all hover:scale-105">
+                    <div class="bg-yellow-500/20 p-3 rounded-full w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+                        <i class="fas fa-spell-check text-yellow-400 text-xl"></i>
+                    </div>
+                    <h4 class="font-medium mb-1">Grammar Checker</h4>
+                    <p class="text-sm text-gray-400">AI-powered</p>
+                </div>
+
+                <div class="feature-card glassmorphism rounded-lg p-4 text-center cursor-pointer transition-all hover:scale-105">
+                    <div class="bg-pink-500/20 p-3 rounded-full w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+                        <i class="fas fa-qrcode text-pink-400 text-xl"></i>
+                    </div>
+                    <h4 class="font-medium mb-1">QR Generator</h4>
+                    <p class="text-sm text-gray-400">Custom design</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <button class="gradient-bg px-8 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">
+                    View All Popular Tools <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-12 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-inter font-bold mb-4">Why Choose ToolSuite Pro?</h2>
+                <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+                    Professional-grade tools with enterprise security and blazing-fast performance
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="feature-card glassmorphism rounded-lg p-6 text-center transition-all hover:scale-105">
+                    <div class="bg-primary/20 p-4 rounded-full w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+                        <i class="fas fa-shield-alt text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">100% Secure</h3>
+                    <p class="text-gray-300">Your files are processed securely and automatically deleted after conversion.</p>
+                </div>
+
+                <div class="feature-card glassmorphism rounded-lg p-6 text-center transition-all hover:scale-105">
+                    <div class="bg-success/20 p-4 rounded-full w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+                        <i class="fas fa-lightning-bolt text-success text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Lightning Fast</h3>
+                    <p class="text-gray-300">Advanced processing algorithms ensure quick conversion without quality loss.</p>
+                </div>
+
+                <div class="feature-card glassmorphism rounded-lg p-6 text-center transition-all hover:scale-105">
+                    <div class="bg-accent/20 p-4 rounded-full w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+                        <i class="fas fa-mobile-alt text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Mobile Friendly</h3>
+                    <p class="text-gray-300">All tools work perfectly on any device - desktop, tablet, or mobile.</p>
+                </div>
+
+                <div class="feature-card glassmorphism rounded-lg p-6 text-center transition-all hover:scale-105">
+                    <div class="bg-secondary/20 p-4 rounded-full w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+                        <i class="fas fa-infinity text-secondary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Unlimited Usage</h3>
+                    <p class="text-gray-300">No file size limits, no daily restrictions. Use as much as you need.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ad Slot 3 -->
+    <div class="max-w-7xl mx-auto px-4 mb-12">
+        <div class="glassmorphism rounded-lg p-8 text-center border-dashed border-2 border-gray-600">
+            <div class="text-gray-400 mb-2">Advertisement</div>
+            <div class="h-24 bg-gray-700/30 rounded flex items-center justify-center">
+                <span class="text-gray-500">728x90 Banner Ad Slot</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="py-16 px-4 bg-gradient-to-r from-primary/10 to-accent/10 relative overflow-hidden">
+        <div class="absolute inset-0 gradient-bg opacity-5"></div>
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <h2 class="text-3xl md:text-5xl font-inter font-bold mb-6">
+                Start Using Our Tools <span class="gradient-text">Right Now</span>
+            </h2>
+            <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                No registration required. No hidden fees. Just professional tools that work instantly.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="gradient-bg px-8 py-4 rounded-lg font-medium text-lg hover:opacity-90 transition-opacity">
+                    <i class="fas fa-play mr-2"></i>Start Converting Now
+                </button>
+                <button class="border-2 border-primary text-primary px-8 py-4 rounded-lg font-medium text-lg hover:bg-primary hover:text-white transition-all">
+                    <i class="fas fa-list mr-2"></i>Browse All Tools
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-cards/50 border-t border-white/10 pt-12 pb-6 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="gradient-bg p-2 rounded-lg">
+                            <i class="fas fa-tools text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-inter font-bold gradient-text">ToolSuite Pro</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4 max-w-md">
+                        Professional online tools and converters for all your file processing needs. 
+                        Convert, edit, and optimize files with ease.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Tool Categories</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">PDF Tools</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Image Tools</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Audio Tools</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Text Tools</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Productivity Tools</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">
+                    © 2024 ToolSuite Pro. All rights reserved.
+                </p>
+                <div class="flex items-center space-x-6 text-sm text-gray-400">
+                    <span>Made with ❤️ for creators</span>
+                    <span>•</span>
+                    <span>SSL Secured</span>
+                    <span>•</span>
+                    <span>GDPR Compliant</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" class="fixed bottom-4 left-4 right-4 md:left-auto md:right-4 md:max-w-md glassmorphism rounded-lg p-4 border border-white/20 z-50">
+        <div class="flex items-start space-x-3">
+            <i class="fas fa-cookie-bite text-accent text-xl mt-1"></i>
+            <div class="flex-1">
+                <p class="text-sm text-gray-300 mb-3">
+                    We use cookies to enhance your experience and analyze site usage. 
+                    <a href="#" class="text-primary hover:underline">Learn more</a>
+                </p>
+                <div class="flex space-x-2">
+                    <button id="accept-cookies" class="bg-primary text-white px-4 py-2 rounded text-sm hover:opacity-90 transition-opacity">
+                        Accept All
+                    </button>
+                    <button id="reject-cookies" class="border border-gray-500 text-gray-300 px-4 py-2 rounded text-sm hover:bg-gray-700 transition-colors">
+                        Decline
+                    </button>
+                </div>
+            </div>
+            <button id="close-banner" class="text-gray-400 hover:text-white">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Loading Overlay (Hidden by default) -->
+    <div id="loading-overlay" class="fixed inset-0 bg-background/90 backdrop-blur-sm z-50 hidden">
+        <div class="flex items-center justify-center h-full">
+            <div class="text-center">
+                <div class="animate-spin rounded-full h-16 w-16 border-4 border-primary border-t-transparent mx-auto mb-4"></div>
+                <p class="text-lg text-gray-300">Processing your file...</p>
+                <div class="w-64 bg-gray-700 rounded-full h-2 mt-4">
+                    <div id="progress-bar" class="gradient-bg h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            // Cookie consent functionality
+            const cookieBanner = document.getElementById('cookie-banner');
+            const acceptBtn = document.getElementById('accept-cookies');
+            const rejectBtn = document.getElementById('reject-cookies');
+            const closeBtn = document.getElementById('close-banner');
+
+            function hideBanner() {
+                cookieBanner.style.display = 'none';
+            }
+
+            acceptBtn.addEventListener('click', () => {
+                // TODO: Set cookie preferences and initialize analytics
+                localStorage.setItem('cookieConsent', 'accepted');
+                hideBanner();
+            });
+
+            rejectBtn.addEventListener('click', () => {
+                // TODO: Set minimal cookie preferences
+                localStorage.setItem('cookieConsent', 'rejected');
+                hideBanner();
+            });
+
+            closeBtn.addEventListener('click', hideBanner);
+
+            // Check if user has already made a choice
+            if (localStorage.getItem('cookieConsent')) {
+                hideBanner();
+            }
+
+            // Tool category click handlers
+            const toolCards = document.querySelectorAll('.tool-card');
+            toolCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const category = this.dataset.category;
+                    if (category) {
+                        // TODO: Navigate to specific tool category page
+                        console.log(`Navigate to ${category} tools page`);
+                        
+                        // Show loading state
+                        const loadingOverlay = document.getElementById('loading-overlay');
+                        const progressBar = document.getElementById('progress-bar');
+                        
+                        loadingOverlay.classList.remove('hidden');
+                        
+                        // Simulate loading progress
+                        let progress = 0;
+                        const interval = setInterval(() => {
+                            progress += Math.random() * 30;
+                            if (progress >= 100) {
+                                progress = 100;
+                                clearInterval(interval);
+                                setTimeout(() => {
+                                    loadingOverlay.classList.add('hidden');
+                                    progressBar.style.width = '0%';
+                                }, 500);
+                            }
+                            progressBar.style.width = progress + '%';
+                        }, 200);
+                    }
+                });
+            });
+
+            // Search functionality
+            const searchInput = document.querySelector('input[type="text"]');
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    // TODO: Implement search functionality
+                    console.log('Search for:', this.value);
+                }
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Intersection Observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-slide-up');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements for animation
+            document.querySelectorAll('.tool-card, .feature-card').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Mobile menu toggle
+            const mobileMenuBtn = document.querySelector('.md\\:hidden button');
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    // TODO: Implement mobile menu toggle
+                    console.log('Toggle mobile menu');
+                });
+            }
+
+            // Dynamic year in footer
+            const currentYear = new Date().getFullYear();
+            document.querySelector('footer p').innerHTML = 
+                document.querySelector('footer p').innerHTML.replace('2024', currentYear);
+
+        })();
+    </script>
+</body>
+</html>
